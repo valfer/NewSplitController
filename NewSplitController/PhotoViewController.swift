@@ -12,7 +12,7 @@ class PhotoViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView! = nil
     
-    public var image : UIImage? = nil {
+    var image : UIImage? = nil {
         willSet(newImage) {
         }
         didSet {

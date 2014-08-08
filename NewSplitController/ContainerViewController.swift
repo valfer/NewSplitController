@@ -30,7 +30,7 @@ class ContainerViewController : UIViewController {
             oldValue?.removeFromParentViewController()
             self.setOverrideTraitCollection(nil, forChildViewController:oldValue)
         
-            if viewController {
+            if viewController != nil {
                 self.addChildViewController(viewController)
                 let view = viewController!.view
                 self.view.addSubview(view)

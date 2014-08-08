@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FBFE27BD-2B0B-4682-9DA3-5A7617198158</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NewSplitController</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2CFE5C4591CDB45014265397898DD9509CB55934</key>
+		<string>https://github.com/tabasoft/NewSplitController.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NewSplitController.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2CFE5C4591CDB45014265397898DD9509CB55934</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tabasoft/NewSplitController.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2CFE5C4591CDB45014265397898DD9509CB55934</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2CFE5C4591CDB45014265397898DD9509CB55934</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NewSplitController</string>
+		</dict>
+	</array>
+</dict>
+</plist>
