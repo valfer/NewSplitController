@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PhotoTableViewController: UITableViewController, UITableViewDelegate {
+class PhotoTableViewController: UITableViewController {
 
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
             var image : UIImage? = nil
             
@@ -24,10 +24,10 @@ class PhotoTableViewController: UITableViewController, UITableViewDelegate {
                 image = UIImage(named: "tramonto")
             }
         
-        let app = UIApplication.sharedApplication().delegate as AppDelegate
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
         app.selectedPhoto = indexPath.row
         
-        let photoVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewControllerWithIdentifier("photovc") as PhotoViewController
+        let photoVC = UIStoryboard(name:"Main", bundle:nil).instantiateViewControllerWithIdentifier("photovc") as! PhotoViewController
         photoVC.image = image
         self.showDetailViewController(photoVC, sender: self)
     }

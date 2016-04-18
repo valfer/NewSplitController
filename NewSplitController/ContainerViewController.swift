@@ -18,29 +18,33 @@ class ContainerViewController : UIViewController {
     }
     
     private func forceNewTrait() {
-        self.setOverrideTraitCollection(customTraitCollection, forChildViewController:viewController)
+        if let _viewController = viewController {
+            self.setOverrideTraitCollection(customTraitCollection, forChildViewController:_viewController)
+        }
     }
     
     var viewController : UISplitViewController? = nil {
 
         didSet {
             
-            oldValue?.willMoveToParentViewController(nil)
-            oldValue?.view.removeFromSuperview()
-            oldValue?.removeFromParentViewController()
-            self.setOverrideTraitCollection(nil, forChildViewController:oldValue)
-        
-            if viewController != nil {
-                self.addChildViewController(viewController)
-                let view = viewController!.view
+            if let _oldValue = oldValue {
+                _oldValue.willMoveToParentViewController(nil)
+                _oldValue.view.removeFromSuperview()
+                _oldValue.removeFromParentViewController()
+                self.setOverrideTraitCollection(nil, forChildViewController:_oldValue)
+            
+            }
+            if let _viewController = viewController {
+                self.addChildViewController(_viewController)
+                let view = _viewController.view
                 self.view.addSubview(view)
-                viewController?.didMoveToParentViewController(self)
+                _viewController.didMoveToParentViewController(self)
                 forceNewTrait()
             }
         }
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         
         if size.width > 320 {
             customTraitCollection = UITraitCollection(horizontalSizeClass:.Regular)
