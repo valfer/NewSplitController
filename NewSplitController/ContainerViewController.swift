@@ -28,7 +28,7 @@ class ContainerViewController : UIViewController {
         didSet {
             
             if let _oldValue = oldValue {
-                _oldValue.willMoveToParentViewController(nil)
+                _oldValue.willMove(toParentViewController: nil)
                 _oldValue.view.removeFromSuperview()
                 _oldValue.removeFromParentViewController()
                 self.setOverrideTraitCollection(nil, forChildViewController:_oldValue)
@@ -37,22 +37,23 @@ class ContainerViewController : UIViewController {
             if let _viewController = viewController {
                 self.addChildViewController(_viewController)
                 let view = _viewController.view
-                self.view.addSubview(view)
-                _viewController.didMoveToParentViewController(self)
+                self.view.addSubview(view!)
+                _viewController.didMove(toParentViewController: self)
                 forceNewTrait()
             }
         }
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         if size.width > 320 {
-            customTraitCollection = UITraitCollection(horizontalSizeClass:.Regular)
+            customTraitCollection = UITraitCollection(horizontalSizeClass:.regular)
         } else {
             customTraitCollection = nil;
         }
-    
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator);
+        
+        super.viewWillTransition(to: size, with: coordinator);
+        
     }
-    
+
 }
